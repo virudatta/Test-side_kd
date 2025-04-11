@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Final Message</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            line-height: 2;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+            white-space: pre-line;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1s;
+            overflow-y: auto;
+            max-height: 85vh;
+            scrollbar-width: thin;
+            scrollbar-color: #fff #000;
+            scroll-behavior: smooth;
+        }
+
+        .container::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: #fff;
+        }
+
+        .message {
+            text-align: left;
+            position: relative;
+            line-height: 2.2;
+            padding-bottom: 50vh;
+        }
+
+        .typed {
+            border-right: 1px solid rgba(255, 255, 255, 0.7);
+            animation: blink 0.8s step-end infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .space { height: 2em; }
+        .break { height: 3em; }
+
+        .highlight {
+            color: #ff9999;
+            font-weight: bold;
+        }
+
+        .equation {
+            display: block;
+            text-align: center;
+            font-size: 1.4em;
+            padding: 1em 0;
+            color: #88ccff;
+        }
+
+        .date {
+            color: #aaffaa;
+            font-weight: bold;
+        }
+
+        .audio-control {
+            position: fixed;
+            border: 2px solid gray;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 4px;
+            display: flex;
+            z-index: 1000;
+            transition-duration: 300ms;
+        }
+
+        .audio-control:hover {
+            scale: 1.1;
+            background: rgba(255, 255, 255, 0.2);
+            
+        }
+
+        .pause-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .start-prompt {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bgm" loop>
+        <source src="https://audio.jukehost.co.uk/bjS3jphldf3vw0h7nrW6TQSPtml3qeXH">
+    </audio>
+    
+    <div class="container">
+        <div class="message" id="message"></div>
+    </div>
+
+    <div class="audio-control" id="audioControl">
+        <button class="pause-btn" id="pauseBtn">||</button>
+    </div>
+
+    <div class="start-prompt" id="startPrompt">
+        <p>Click anywhere to begin</p>
+    </div>
+
+    <script>
+    const text = `Thanks for accepting my request.
+
+While writing this, ironically we both are in 12th.
+
+Now I can finally share 
+my ideas, daydreams, feelings, truths, lies, and everything in between.
+
+As things were going , teachers used to make boys and girls sit together,
+ others were really kinda thief and stubborn, but u were one of my fav. bench mates.
+Then corona came and whole things got ruined.
+
+As we chatted every day, I found myself getting really attached to you.
+Afraid of being ignored, I lied about liking someone else. At that time,
+I didn’t even like JK because his action had me thinking,
+"NANI? How did he even take it like that"
+
+Maybe he had better rizz with his partner, and you all were just love fools back then.
+He and his bro really tried to stop me from speaking against them.
+But despite all of this, I still remember our adventures (Class 10). 
+Late chats with @creationwithtwovedas, Making fun of bulldog (if you remembered)
+Make delete your meme account, 🤧 (Sanskrit classes) really enjoyed with you , Moksha,
+and third name which makes u angry 🥲, 
+PS: your cry makes me nearly cry though, so I didn't looked at u
+Well thank God Google updated translator for Sanskrit🥸
+PS: Can we really go back to those days?
+
+After 10th, I thought it was time to rebuild good memories
+and it was going better for months (it was a festival for me)
+I used to remember whenever I go to Highway, specially near Panchgaon
+I was in the bus, you were not attending your class instead 
+you were chatting on Insta @kd_chillin (a day after many days)
+And you asked me "I heard from Yashika that you liked me?" 
+What could I answer? I said no.
+Duh I was afraid that things are already on peak and
+it would break this whole thing and
+said no to prevent this shit but God was not merciful to me
+
+PS: I used to think about it if I said yes, would things got better?
+
+By mid-11th, I noticed a change—you seemed distant, hid things.
+Pretty obvious since the whole friend circle had changed.
+Your surroundings were different, and honestly, I didn’t like or cared for them.
+The vibe felt off—brain-rotted, not even friendly
+PS: I don't liked this period.
+
+Then I found out that J and K were back together. That was the hardest cry I ever cried
+
+But then I saw you both in CS. You were watching him, smiling.
+That gave me relief, and after that, I never interfered between you two lovebirds.
+But it didn’t last long. You broke up because he was too possessive about your social life,
+and then you started hiding everything
+
+Balma told me, "Just leave her and find someone else."
+He was trying to motivate me, but honestly, he was having his own intentions through it.
+In Akash, I found out people were crazy about you. Jerks who just talked shit.
+I even met them when Balma invited them in his BD
+
+Might times were better last year but realisation didn’t took place and I got failed,
+even I didn't get a second chance for retest😓
+After that, your sick zone attacked on my manner (Xavier effect—which I really don’t want to explain).
+On the other side, I got threatening calls for days and days from Akash.
+I knew a lot about DS, but you blocked me without even listening.
+And after your third breakup, you didn’t even thank me😔
+
+Nevermind🙂
+
+Those months were depressing. Feeling helpless, hopeless, betrayed
+
+But somehow, I made good friends in a junior class and started working on myself.
+
+Between these days, your birthday was there, so wanted to gift you a sketch,
+but working on few details, I got it ruined.
+
+PS: If you noticed something, some details are similar 😉
+
+ Eventually, during annual function prep, we talked after such a long time. I was happy again (really happy)
+
+But by the evening of the picnic, you were distant again.
+Hiding, walking ahead towards front seat. (Hope shattered once again)
+PS:(Usually Overthinking is usual nowadays)
+
+I planned to have a long conversation on farewell. But that day, I was crying too much, knowing you all were leaving school forever.
+I especially felt like I was losing my last chance to face you. My tears made me speechless—I couldn’t say what I had planned
+
+Still, you gave me a lollipop of hope of accepting my request. And I’m still waiting
+
+Well as a friend I don’t know anyone as much as I know you, as I even know you more than myself,
+I was confused 
+Is it I liked you or am I only worried about that
+Jerks like you, Maybe  your pale and serene colour 
+Even though you are beautiful 
+But even I like you more as a soul, that smile, the laughter we have,
+that charisma, that aura, that voice, especially drums
+
+PS: While IHC Group Dance (2023), the saree wore for kathak, that really got me blushed but also looking at you at the same time
+And even in farewell also. You are always prettiest.
+
+Nowadays lit. things surrounding me used to remember, especially you.
+Like it's a list of infinite.
+I used to dream (day and night), cruising together to various places,
+capturing moments , if only as a FRIEND.
+People were concerned about me and they used to say "she was this, she was that"
+I ignored these things cause I don't even care, they don't know the bond we shared,
+like HCl where the dipole moment is stronger towards you,  used to say myself "she got kinda curable delulu " 
+
+I never wanted to lose you from my life because 
+1. It's not the time
+2. you were the only one I liked
+And I don't see me in a future where I like anyone this much 
+However only as a friend 
+While being with me, your smile, laughter between us is enough for me 
+Like your frequency really influences mine
+
+Always want to keep you carefully 
+Even you took place on my desktop 
+Used to hide icon on other's intervention on my pc
+
+Maybe It was not correct time for this kind of confession 
+but it continues to making my chest pain and heart beat getting faster as of anxiety 
+
+So is this the FINAL GOODBYE, or a few time is left ?
+I don't think so because now I don't care anymore whoever think,
+I am horrible as a person, because my mind and upper body feels really 
+uncomfortable due to my shitty overthinking and dumb brain
+
+Feels so cold and lonely due to emotions
+
+PS: Expressing myself is too hard that's why I typing this whole message 
+My brain really used to let go things but not my heart, "NOT THIS TIME"
+
+またいっしょにともだちになれますか？
+(Mata issho ni tomodachi ni naremasu ka?)
+Can we be friends again?
+
+
+
+
+But by the evening of March 11, 2025,
+I came there to find you absorbed in your phone.
+Your group didn't want me there - Perhaps you didn't either.
+ Why did you change to be like them?
+
+Yes, I finally understood - You wanted me to lose hope Of being with you.
+Yet you never made it clear. Do you know the pain you caused? It's simple enough to understand now.
+Perhaps this was what you wanted.
+
+And now, Thank you for destroying an innocent belief.
+
+Well, this is the end. Let these memories rest in peace. May God bless you and your family with prosperity.
+
+Never expected this worse ending , even worser than Brigde to Terabethia and Titanic.
+
+
+さよなら
+(Sayonara)
+Good Bye forever
+Krati San
+
+
+
+
+
+                                    Last Draft:
+                                    12th March, 2025
+                                               01:24`;
+
+    let index = 0;
+    const messageEl = document.getElementById('message');
+    let isTyping = true;
+    let isPaused = false;
+    const bgm = document.getElementById('bgm');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const audioControl = document.getElementById('audioControl');
+    const startPrompt = document.getElementById('startPrompt');
+
+    function typeWriter() {
+        if (isPaused) return;
+        
+        if (index < text.length && isTyping) {
+            messageEl.innerHTML = text.slice(0, index + 1) + '<span class="typed"></span>';
+            index++;
+            
+            // Vary typing speed based on punctuation
+            let delay = 50;
+            if (text[index] === '.') delay = 400;
+            else if (text[index] === ',') delay = 200;
+            else if (text[index] === '\n') delay = 800;
+            
+            // Auto-scroll after each character
+            requestAnimationFrame(() => {
+                messageEl.parentElement.scrollTo({
+                    top: messageEl.parentElement.scrollHeight,
+                    behavior: 'auto'
+                });
+            });
+            
+            setTimeout(typeWriter, delay);
+        } else {
+            messageEl.innerHTML = text;
+        }
+    }
+
+    pauseBtn.addEventListener('click', function() {
+        if (isPaused) {
+            isPaused = false;
+            typeWriter();
+            bgm.play();
+            pauseBtn.textContent = '||';
+        } else {
+            isPaused = true;
+            bgm.pause();
+            pauseBtn.textContent = '▶';
+        }
+    });
+
+    window.onload = () => {
+        audioControl.style.display = 'none';
+        bgm.volume = 0.7;
+        
+        // Start typing and music on first click
+        document.addEventListener('click', function startExperience() {
+            startPrompt.classList.add('fade-out');
+            setTimeout(() => {
+                startPrompt.style.display = 'none';
+            }, 1000);
+            
+            typeWriter();
+            bgm.play().catch(err => console.log('Audio playback failed:', err));
+            document.querySelector('.container').style.opacity = 1;
+            audioControl.style.display = 'flex';
+            document.removeEventListener('click', startExperience);
+        }, { once: true });
+    };
+
+    // Add keyboard controls
+    document.addEventListener('keydown', function(e) {
+        if (e.code === 'Space') {
+            e.preventDefault();
+            if (isPaused) {
+                isPaused = false;
+                typeWriter();
+                bgm.play();
+                pauseBtn.textContent = '||';
+            } else {
+                isPaused = true;
+                bgm.pause();
+                pauseBtn.textContent = '▶';
+            }
+        }
+    });
+    </script>
+</body>
+</html>
